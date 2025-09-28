@@ -43,5 +43,3 @@ Next steps: design review.
 Document successfully exported in PDF format.
 ```
 
-
-Do you want me to do that?
