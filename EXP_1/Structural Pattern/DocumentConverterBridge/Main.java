@@ -1,46 +1,52 @@
-import java.util.Scanner;
 import exporters.*;
 import documents.*;
+import utils.*;
+
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        LoggerUtil.logInfo("=== Dynamic Document Converter Started ===");
 
-        System.out.println("=== Dynamic Document Converter ===");
+        boolean continueProgram = true;
 
-        // 1. Get Document Title and Content
-        System.out.print("Enter Document Title: ");
-        String title = sc.nextLine();
+        while (continueProgram) {
+            try {
+                String title = InputHandler.getNonEmptyString("Enter Document Title: ");
+                String content = InputHandler.getMultiLineInput("Enter Document Content", "END");
+                String format = InputHandler.getFormatChoice("Choose Format", new String[]{"pdf", "docx", "odt"});
 
-        System.out.println("Enter Document Content (end with a single line 'END'):");
-        StringBuilder contentBuilder = new StringBuilder();
-        while (true) {
-            String line = sc.nextLine();
-            if (line.trim().equalsIgnoreCase("END")) break;
-            contentBuilder.append(line).append("\n");
+                FormatExporter exporter;
+                switch (format) {
+                    case "pdf":  exporter = new PdfExporter(); break;
+                    case "docx": exporter = new DocxExporter(); break;
+                    case "odt":  exporter = new OdtExporter(); break;
+                    default: throw new IllegalStateException("Unexpected format: " + format);
+                }
+
+                Document document = new GenericDocument(exporter, title, content);
+
+                int retries = 3;
+                for (int i = 0; i < retries; i++) {
+                    try {
+                        document.export();
+                        LoggerUtil.logInfo("Document successfully exported in " + format.toUpperCase() + " format.");
+                        break;
+                    } catch (IOException e) {
+                        LoggerUtil.logError("Export attempt " + (i+1) + " failed", e);
+                        if (i == retries - 1) LoggerUtil.logInfo("All retries failed. Moving to next document.");
+                        Thread.sleep(1000);
+                    }
+                }
+
+                String continueChoice = InputHandler.getFormatChoice("Do you want to create another document?", new String[]{"yes", "no"});
+                continueProgram = continueChoice.equalsIgnoreCase("yes");
+
+            } catch (Exception e) {
+                LoggerUtil.logError("Unexpected error occurred", e);
+            }
         }
-        String content = contentBuilder.toString();
 
-        // 2. Choose Export Format
-        System.out.print("Choose Format [pdf/docx/odt]: ");
-        String format = sc.nextLine().trim().toLowerCase();
-
-        FormatExporter exporter;
-        switch (format) {
-            case "pdf":  exporter = new PdfExporter(); break;
-            case "docx": exporter = new DocxExporter(); break;
-            case "odt":  exporter = new OdtExporter(); break;
-            default:
-                System.out.println("Unknown format: " + format);
-                sc.close();
-                return;
-        }
-
-        // 3. Create Document Object and Export
-        Document document = new GenericDocument(exporter, title, content);
-        document.export();
-
-        sc.close();
-        System.out.println("\nDocument successfully exported in " + format.toUpperCase() + " format.");
+        LoggerUtil.logInfo("=== Document Converter Exited ===");
     }
 }

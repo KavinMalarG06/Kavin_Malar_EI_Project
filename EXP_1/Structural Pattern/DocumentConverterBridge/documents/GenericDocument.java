@@ -1,4 +1,5 @@
 package documents;
+
 import exporters.FormatExporter;
 
 public class GenericDocument extends Document {

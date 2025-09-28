@@ -1,5 +1,7 @@
 package documents;
+
 import exporters.FormatExporter;
+import java.io.IOException;
 
 public abstract class Document {
     protected FormatExporter exporter;
@@ -12,7 +14,7 @@ public abstract class Document {
         this.content = content;
     }
 
-    public void export() {
+    public void export() throws IOException {
         exporter.export(title, content);
     }
 }
