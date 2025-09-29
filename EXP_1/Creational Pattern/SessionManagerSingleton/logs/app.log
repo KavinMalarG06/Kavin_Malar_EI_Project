@@ -1,0 +1,10 @@
+[2025-09-29T19:39:09.692332200] INFO: Authentication Manager started.
+[2025-09-29T19:39:18.770118100] INFO: User registered: Kavin
+[2025-09-29T19:39:37.663356200] WARNING: Failed login attempt for: malar
+[2025-09-29T19:39:43.853915400] INFO: User logged in: Kavin
+[2025-09-29T19:39:59.469609] INFO: User registered: Malar
+[2025-09-29T19:40:12.712735800] INFO: User logged in: Malar
+[2025-09-29T19:40:28.358762300] INFO: User logged in: Kavin
+[2025-09-29T19:40:36.408754400] INFO: User logged out: Kavin
+[2025-09-29T19:40:54.699868] WARNING: No active session to logout
+[2025-09-29T19:46:55.992390300] INFO: Exiting Authentication Manager.
