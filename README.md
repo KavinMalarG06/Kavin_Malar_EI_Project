@@ -33,7 +33,7 @@ The **Singleton pattern** is used to guarantee that only **one AuthenticationMan
 * **Utils:** Provides logging, input handling, and defensive programming helpers.
 * **Main:** CLI interface for interacting with users.
 
-## Example Run
+## Sample Run
 
 ```
 [2025-09-29T19:33:02] INFO: Authentication Manager started.
@@ -140,7 +140,7 @@ The **Bridge pattern** is used to **decouple abstraction (document types) from i
 * **Implementor:** `FormatExporter` interface (defines export behavior)
 * **Concrete Implementors:** `PdfExporter`, `DocxExporter`, `OdtExporter`
 
-## Example Run
+## Sample Run
 
 ```
 [INFO] 2025-09-28 19:15:30 - === Dynamic Document Converter Started ===
@@ -183,7 +183,7 @@ The **Flyweight pattern** is used to share objects that have common intrinsic pr
 * **Client:** `CloudSimulator` (requests clouds and assigns random positions)
 * **Extrinsic State:** Coordinates `(x, y)` supplied at runtime
 
-## Example Run
+## Sample Run
 
 ```
 === Weather Simulation Menu ===
