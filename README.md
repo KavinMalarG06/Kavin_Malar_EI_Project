@@ -1,6 +1,71 @@
 # Kavin_Malar_EI_Project
 ### EXP_1
 
+
+# Robot Controller – Command Design Pattern
+
+## Project Description
+
+This project demonstrates a **Robot Controller** implemented using the **Command Design Pattern**. The program provides a command-line interface (CLI) where users can:
+
+* Move the robot forward or backward.
+* Turn the robot left or right.
+* Pick up or place an object.
+* Undo the last executed command.
+* Exit the application.
+
+The Command pattern ensures that each action is encapsulated as a separate command object, decoupling the **invoker** from the **receiver**, while providing undo functionality and maintainable, extensible code.
+
+## Purpose / Use Case
+
+The Robot Controller is useful in scenarios like:
+
+* Simulating robot movements and actions in a controlled environment.
+* Teaching or demonstrating the Command Design Pattern in CLI-based applications.
+* Supporting undoable actions and command history tracking.
+* Providing robust logging, input validation, and exception handling for safe user interactions.
+* Creating an extensible system where new robot commands can be added easily.
+
+## Design Pattern
+
+The **Command pattern** is used to encapsulate robot actions:
+
+* **Command (Interface)**: Declares `execute()` and `undo()` methods.
+* **Concrete Commands**: `MoveForwardCommand`, `MoveBackwardCommand`, `TurnLeftCommand`, `TurnRightCommand`, `PickPlaceCommand`.
+* **Receiver (Robot)**: Performs the actual actions, maintains state (`x`, `y`, direction).
+* **Invoker (RobotControllerInvoker)**: Executes commands and maintains a history for undo functionality.
+* **Utils**: Provides logging (`LoggerUtil`) and input validation (`InputValidator`) for robust interactions.
+* **Main**: CLI interface for interacting with the user.
+
+## Sample Run
+
+```
+[2025-09-29T20:15:00] INFO: Robot Controller Started
+
+=== Robot Controller Menu ===
+1. Move Forward
+2. Move Backward
+3. Turn Left
+4. Turn Right
+5. Pick/Place Object
+6. Undo Last Command
+7. Exit
+Enter choice: 1
+[2025-09-29T20:15:05] INFO: Robot moved forward to position: (0,1) facing NORTH
+
+=== Robot Controller Menu ===
+1. Move Forward
+2. Move Backward
+3. Turn Left
+4. Turn Right
+5. Pick/Place Object
+6. Undo Last Command
+7. Exit
+Enter choice: 7
+[2025-09-29T20:15:20] INFO: Exiting Robot Controller
+```
+
+
 # Authentication / Session Manager – Singleton Design Pattern
 
 ## Project Description
