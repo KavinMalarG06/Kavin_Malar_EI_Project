@@ -1,6 +1,87 @@
 # Kavin_Malar_EI_Project
 ### EXP_1
 
+# Authentication / Session Manager – Singleton Design Pattern
+
+## Project Description
+
+This project demonstrates an **Authentication / Session Manager** implemented using the **Singleton Design Pattern**. The program provides a command-line interface (CLI) where users can:
+
+* Register new accounts with a username and password.
+* Login to the system with valid credentials.
+* Logout from an active session.
+* Check the current active session at any time.
+
+The **Singleton pattern** ensures that there is **only one instance** of the Authentication Manager controlling all user sessions throughout the application’s lifecycle.
+
+## Purpose / Use Case
+
+The Authentication / Session Manager is useful in scenarios like:
+
+* Controlling user session creation and access in CLI-based or server-side applications.
+* Ensuring a single point of truth for session handling in applications requiring consistent state management.
+* Providing a centralized manager for login/logout functionality without risking multiple conflicting instances.
+* Logging user actions and handling exceptions in a robust, maintainable manner.
+
+## Design Pattern
+
+The **Singleton pattern** is used to guarantee that only **one AuthenticationManager instance** exists:
+
+* **Singleton (AuthenticationManager):** Manages registration, login, logout, and session tracking.
+* **User:** Represents a registered user with username and password.
+* **Session:** Represents an active user session including login timestamp.
+* **Utils:** Provides logging, input handling, and defensive programming helpers.
+* **Main:** CLI interface for interacting with users.
+
+## Example Run
+
+```
+[2025-09-29T19:33:02] INFO: Authentication Manager started.
+
+=== Authentication Menu ===
+1. Register
+2. Login
+3. Logout
+4. Check Active Session
+5. Exit
+Enter choice: 1
+Enter username: Alice
+Enter password: Pass123
+[2025-09-29T19:33:10] INFO: User registered: Alice
+User registered successfully!
+
+=== Authentication Menu ===
+1. Register
+2. Login
+3. Logout
+4. Check Active Session
+5. Exit
+Enter choice: 2
+Enter username: Alice
+Enter password: Pass123
+[2025-09-29T19:33:21] INFO: User logged in: Alice
+Login successful!
+
+=== Authentication Menu ===
+1. Register
+2. Login
+3. Logout
+4. Check Active Session
+5. Exit
+Enter choice: 4
+Active session for: Alice since 2025-09-29T19:33:21.830
+
+=== Authentication Menu ===
+1. Register
+2. Login
+3. Logout
+4. Check Active Session
+5. Exit
+Enter choice: 5
+[2025-09-29T19:34:00] INFO: Exiting Authentication Manager.
+```
+
+
 # Advanced Vehicle Factory - Factory Design Pattern
 
 ## **Project Overview**
