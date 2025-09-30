@@ -66,6 +66,75 @@ Enter choice: 7
 ```
 
 
+# Traffic Signal Monitoring System – Observer Design Pattern
+
+## Project Description
+
+This project demonstrates a **Traffic Signal Monitoring System** implemented using the **Observer Design Pattern**. The program provides a command-line interface (CLI) where users can:
+
+* Change the traffic signal state (`RED`, `YELLOW`, `GREEN`).
+* Dynamically attach or detach observers such as Traffic Police, Pedestrians, and Vehicles.
+* Notify all registered observers automatically whenever the signal changes.
+* Exit the application gracefully.
+
+The Observer pattern ensures that when the **Traffic Signal (Subject)** changes, all dependent **Observers** (e.g., Vehicles, Pedestrians) are updated automatically, without the subject knowing their exact implementation details.
+
+---
+
+## Purpose / Use Case
+
+The Traffic Signal Monitoring System is useful in scenarios like:
+
+* Simulating real-world traffic signal behavior for vehicles and pedestrians.
+* Demonstrating how multiple stakeholders (police, pedestrians, vehicles) respond differently to the same event.
+* Teaching or illustrating the Observer Design Pattern in a CLI-based program.
+* Supporting extensibility by allowing new observers (e.g., Emergency Services) to be added easily without modifying the signal logic.
+* Providing robust input validation, exception handling, and logging for safe long-running operation.
+
+## Design Pattern
+
+The **Observer Pattern** is used to decouple the traffic signal (subject) from its dependents:
+
+* **Subject (TrafficSignal)**: Maintains the current signal state and a set of observers. Notifies observers on every state change.
+* **Observer (Interface)**: Declares the `update(TrafficSignalState state)` method.
+* **Concrete Observers**:
+
+  * `TrafficPoliceObserver` – Logs all signal changes for monitoring.
+  * `VehicleObserver` – Responds by moving on GREEN, stopping on RED, and preparing on YELLOW.
+  * `PedestrianObserver` – Responds by crossing on RED and waiting otherwise.
+* **Utils**:
+
+  * `LoggerUtil` – Centralized logging system.
+  * `InputValidator` – Validates menu inputs.
+* **Exceptions**: Custom exceptions for invalid input and observer handling.
+* **Main**: CLI for interacting with the user to change signals and manage the system.
+
+## Sample Run
+
+```
+[2025-09-30T15:05:00] INFO: Starting Traffic Signal Monitoring System...
+
+=== Traffic Signal Menu ===
+1. Change Signal to RED
+2. Change Signal to YELLOW
+3. Change Signal to GREEN
+4. Exit
+Enter choice: 1
+[2025-09-30T15:05:10] INFO: Signal changed to: RED
+[2025-09-30T15:05:10] INFO: Traffic Police notified: Signal is RED
+[2025-09-30T15:05:10] INFO: Vehicles: Stop immediately!
+[2025-09-30T15:05:10] INFO: Pedestrians: Safe to cross now!
+
+=== Traffic Signal Menu ===
+1. Change Signal to RED
+2. Change Signal to YELLOW
+3. Change Signal to GREEN
+4. Exit
+Enter choice: 4
+[2025-09-30T15:05:15] INFO: Shutting down Traffic Signal Monitoring System.
+```
+
+
 # Authentication / Session Manager – Singleton Design Pattern
 
 ## Project Description
