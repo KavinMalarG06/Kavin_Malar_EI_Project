@@ -1,7 +1,7 @@
 # Kavin_Malar_EI_Project
 ### EXP_1
 
-
+### Behavioural Design Pattern
 # Robot Controller – Command Design Pattern
 
 ## Project Description
@@ -135,6 +135,8 @@ Enter choice: 4
 ```
 
 
+### Creational Design Pattern
+
 # Authentication / Session Manager – Singleton Design Pattern
 
 ## Project Description
@@ -250,6 +252,8 @@ Driving a car at 180 km/h.
 Honda is refueling with Petrol
 ```
 
+### Structural Design Pattern
+
 
 # Document Converter – Bridge Design Pattern
 
@@ -335,4 +339,106 @@ Enter your choice: 1
 4. Exit
 Enter your choice: 4
 [INFO] Exiting simulation.
+```
+
+### EXP_2
+
+
+# Astronaut Daily Schedule Organizer – Singleton, Factory & Observer Design Patterns
+
+## Project Description
+
+This project demonstrates an **Astronaut Daily Schedule Organizer** implemented using the **Singleton**, **Factory**, and **Observer** design patterns. The program provides a command-line interface (CLI) where astronauts can:
+
+* Add a new task with description, start time, end time, and priority level.
+* Remove existing tasks by description.
+* View all scheduled tasks sorted by start time.
+* Edit task details (description, time, or priority).
+* Mark tasks as completed.
+* View tasks filtered by priority (High / Medium / Low).
+* Get automatic notifications if a new task conflicts with existing tasks.
+* Exit the application gracefully.
+
+The application ensures only **one schedule manager** exists using the Singleton pattern, provides a **TaskFactory** for safe creation of tasks with validation, and uses the **Observer pattern** to notify users of conflicts or updates.
+
+---
+
+## Purpose / Use Case
+
+The Astronaut Daily Schedule Organizer is useful in scenarios like:
+
+* Assisting astronauts in managing mission-critical daily activities without overlaps.
+* Simulating scheduling systems for training programs.
+* Demonstrating multiple design patterns working together in a simple console application.
+* Teaching best practices in **OOP**, **SOLID principles**, and **design patterns**.
+* Providing extensibility for future features like reminders, recurring tasks, or syncing with mission control systems.
+
+---
+
+## Design Patterns
+
+The following design patterns are applied:
+
+* **Singleton (ScheduleManager)**
+  Ensures there is only one global schedule manager maintaining the astronaut’s tasks.
+
+* **Factory (TaskFactory)**
+  Handles task creation, validates time formats (`HH:MM`, `hh:mm AM/PM`), prevents invalid inputs, and enforces rules like end time > start time.
+
+* **Observer (TaskObserver / ConflictObserver)**
+  Automatically notifies the astronaut when:
+
+  * A new task conflicts with an existing one.
+  * A task is updated or removed.
+
+* **Utils**
+
+  * `LoggerUtil` – Centralized logging of application usage and errors.
+
+---
+
+## Sample Run
+
+```
+[2025-10-01T11:23:00] INFO: Starting Astronaut Daily Schedule Organizer...
+
+=== Astronaut Daily Schedule Organizer ===
+1. Add Task
+2. Remove Task
+3. View All Tasks
+4. Edit Task
+5. Mark Task as Completed
+6. View Tasks by Priority
+7. Exit
+Enter choice: 1
+Enter description: Morning Exercise
+Enter start time (HH:MM or hh:mm AM/PM): 07:00 AM
+Enter end time (HH:MM or hh:mm AM/PM): 08:00 AM
+Enter priority (High/Medium/Low): High
+[2025-10-01T11:23:10] INFO: Task added successfully. No conflicts.
+
+=== Astronaut Daily Schedule Organizer ===
+Enter choice: 1
+Enter description: Team Meeting
+Enter start time (HH:MM or hh:mm AM/PM): 09:00
+Enter end time (HH:MM or hh:mm AM/PM): 10:00
+Enter priority (High/Medium/Low): Medium
+[2025-10-01T11:23:20] INFO: Task added successfully. No conflicts.
+
+=== Astronaut Daily Schedule Organizer ===
+Enter choice: 1
+Enter description: Training Session
+Enter start time (HH:MM or hh:mm AM/PM): 09:30
+Enter end time (HH:MM or hh:mm AM/PM): 10:30
+Enter priority (High/Medium/Low): High
+[2025-10-01T11:23:30] ERROR: Task conflicts with existing task "Team Meeting".
+
+=== Astronaut Daily Schedule Organizer ===
+Enter choice: 3
+07:00 - 08:00: Morning Exercise [High]
+09:00 - 10:00: Team Meeting [Medium]
+
+=== Astronaut Daily Schedule Organizer ===
+Enter choice: 7
+[2025-10-01T11:23:40] INFO: Shutting down Astronaut Daily Schedule Organizer.
 ```
