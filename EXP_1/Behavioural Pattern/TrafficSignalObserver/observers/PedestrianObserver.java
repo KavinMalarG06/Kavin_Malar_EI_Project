@@ -9,7 +9,8 @@ public class PedestrianObserver implements Observer {
     public void update(TrafficSignalState state) {
         if (state == TrafficSignalState.RED) {
             LoggerUtil.getLogger().info("Pedestrians: Safe to cross now!");
-        } else {
+        } 
+        else {
             LoggerUtil.getLogger().info("Pedestrians: Do NOT cross, wait for RED.");
         }
     }

@@ -41,7 +41,8 @@ public class MenuHandler {
                     default: System.out.println("Invalid menu choice: " + choice);
                 }
 
-            } catch (Exception e) {
+            } 
+            catch (Exception e) {
                 System.out.println("Unexpected error occurred: " + e.getMessage());
             }
         }

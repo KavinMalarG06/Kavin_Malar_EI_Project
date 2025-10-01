@@ -10,7 +10,8 @@ public class InputValidator {
                 throw new InvalidInputException("Choice out of range.");
             }
             return choice;
-        } catch (NumberFormatException e) {
+        } 
+        catch (NumberFormatException e) {
             throw new InvalidInputException("Invalid number entered.");
         }
     }

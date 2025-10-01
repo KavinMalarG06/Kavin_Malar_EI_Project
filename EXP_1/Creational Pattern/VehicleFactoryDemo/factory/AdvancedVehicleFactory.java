@@ -3,6 +3,7 @@ package factory;
 import models.*;
 import enums.VehicleCategory;
 
+
 public class AdvancedVehicleFactory {
 
     public static Vehicle createVehicle(VehicleCategory category, String type, String brand, int maxSpeed, String fuelType) {

@@ -1,3 +1,4 @@
+
 package cloud;
 
 public enum CloudType {

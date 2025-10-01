@@ -4,7 +4,6 @@ import contracts.Observer;
 import contracts.Subject;
 import exceptions.ObserverException;
 import utils.LoggerUtil;
-
 import java.util.HashSet;
 import java.util.Set;
 

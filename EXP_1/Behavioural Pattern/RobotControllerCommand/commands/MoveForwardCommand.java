@@ -1,7 +1,6 @@
 package commands;
 
 import receiver.Robot;
-
 public class MoveForwardCommand implements Command {
     private Robot robot;
 

@@ -6,7 +6,8 @@ public class RetryHandler {
         for (int attempt = 1; attempt <= maxRetries; attempt++) {
             try {
                 return action.run();
-            } catch (Exception e) {
+            } 
+            catch (Exception e) {
                 lastException = e;
                 LoggerUtil.getLogger().warning("Attempt " + attempt + " failed: " + e.getMessage());
                 if (attempt == maxRetries) throw e;

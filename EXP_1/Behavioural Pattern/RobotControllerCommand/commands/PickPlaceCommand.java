@@ -16,7 +16,6 @@ public class PickPlaceCommand implements Command {
 
     @Override
     public void undo() {
-        // For simplicity, undoing pick/place just logs reversal action
         System.out.println("Undoing pick/place operation");
     }
 }

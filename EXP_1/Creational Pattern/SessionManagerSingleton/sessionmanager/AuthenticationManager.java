@@ -1,6 +1,5 @@
 package sessionmanager;
 
-// import utils.Utils;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -14,7 +13,6 @@ public class AuthenticationManager {
         registeredUsers = new HashMap<>();
     }
 
-    // Thread-safe singleton with double-checked locking
     public static AuthenticationManager getInstance() {
         if(instance == null) {
             synchronized (AuthenticationManager.class) {

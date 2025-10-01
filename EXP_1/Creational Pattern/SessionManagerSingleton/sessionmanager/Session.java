@@ -2,6 +2,7 @@ package sessionmanager;
 
 import java.time.LocalDateTime;
 
+
 public class Session {
     private final User user;
     private final LocalDateTime loginTime;

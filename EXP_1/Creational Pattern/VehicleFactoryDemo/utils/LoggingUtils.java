@@ -12,7 +12,8 @@ public class LoggingUtils {
             logger.addHandler(ch);
             logger.setLevel(Level.ALL);
             logger.setUseParentHandlers(false);
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             e.printStackTrace();
         }
     }

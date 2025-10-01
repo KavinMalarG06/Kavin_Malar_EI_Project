@@ -1,3 +1,4 @@
+
 package models;
 public class Car extends Vehicle {
     public Car(String brand, int maxSpeed, String fuelType) {

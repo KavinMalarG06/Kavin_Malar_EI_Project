@@ -30,7 +30,7 @@ public class Utils {
             line = scanner.nextLine();
         } catch (Exception e) {
             logWarning("Error reading input: " + e.getMessage());
-            return ""; // Return empty string on read failure
+            return ""; 
         }
 
         if (line == null) {
@@ -48,7 +48,6 @@ public class Utils {
             File logFile = new File(LOG_FILE);
             File logDir = logFile.getParentFile();
 
-            // Create directory if it doesn't exist
             if (!logDir.exists()) {
                 logDir.mkdirs();
             }

@@ -4,7 +4,6 @@ import cloud.Cloud;
 import cloud.CloudFactory;
 import cloud.CloudType;
 import exceptions.SimulationException;
-// import utils.LoggerUtil;
 import utils.RetryHandler;
 
 import java.util.Random;

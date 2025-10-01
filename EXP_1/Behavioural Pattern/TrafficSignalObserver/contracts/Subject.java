@@ -1,5 +1,4 @@
 package contracts;
-
 import core.TrafficSignalState;
 
 public interface Subject {

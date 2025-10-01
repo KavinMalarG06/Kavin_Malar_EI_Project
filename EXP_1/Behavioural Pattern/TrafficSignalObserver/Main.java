@@ -6,6 +6,7 @@ import observers.VehicleObserver;
 import utils.InputValidator;
 import utils.LoggerUtil;
 
+
 import java.util.Scanner;
 
 public class Main {

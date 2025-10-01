@@ -76,7 +76,8 @@ public class Main {
                     default:
                         System.out.println("Invalid choice.");
                 }
-            } catch (Exception e) {
+            } 
+            catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }

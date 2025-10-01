@@ -10,10 +10,12 @@ public class Main {
         try {
             MenuHandler menuHandler = new MenuHandler(scanner);
             menuHandler.showMenu();
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             System.out.println("Unexpected error occurred: " + e.getMessage());
             e.printStackTrace();
-        } finally {
+        } 
+        finally {
             if (scanner != null) {
                 scanner.close();
             }

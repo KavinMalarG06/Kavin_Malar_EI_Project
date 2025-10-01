@@ -1,5 +1,4 @@
 package receiver;
-
 import utils.LoggerUtil;
 
 public class Robot {

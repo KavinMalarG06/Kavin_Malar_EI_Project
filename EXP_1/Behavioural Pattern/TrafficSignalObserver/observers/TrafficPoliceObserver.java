@@ -1,5 +1,4 @@
 package observers;
-
 import contracts.Observer;
 import core.TrafficSignalState;
 import utils.LoggerUtil;

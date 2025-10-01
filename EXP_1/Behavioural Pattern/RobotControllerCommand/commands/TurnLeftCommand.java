@@ -1,7 +1,6 @@
 package commands;
 
 import receiver.Robot;
-
 public class TurnLeftCommand implements Command {
     private Robot robot;
 

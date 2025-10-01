@@ -7,7 +7,7 @@ import utils.LoggerUtil;
 public class Main {
     public static void main(String[] args) {
         LoggerUtil.log("Robot Controller Started");
-
+        
         Robot robot = new Robot();
         RobotControllerInvoker controller = new RobotControllerInvoker();
 

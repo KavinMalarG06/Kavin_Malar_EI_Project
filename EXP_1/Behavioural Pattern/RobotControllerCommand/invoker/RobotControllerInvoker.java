@@ -21,7 +21,8 @@ public class RobotControllerInvoker {
             Command lastCommand = commandHistory.pop();
             lastCommand.undo();
             LoggerUtil.log("Undo last command");
-        } else {
+        } 
+        else {
             LoggerUtil.log("No commands to undo");
         }
     }
